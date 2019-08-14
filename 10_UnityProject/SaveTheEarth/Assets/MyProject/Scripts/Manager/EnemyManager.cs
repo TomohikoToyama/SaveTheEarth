@@ -28,7 +28,7 @@ public class EnemyManager : MonoBehaviour
         currenTime += Time.deltaTime;
         if(currenTime >= spawnTime)
         {
-            spawnTime = Random.Range(0.3f,2f);
+            spawnTime = Random.Range(0.3f,1.2f);
             enmSpawner.Spawn();
             currenTime = 0;
         }

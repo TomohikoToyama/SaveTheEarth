@@ -59,22 +59,25 @@ public class StageManager : MonoBehaviour
             {
                 ChangeState((int)STATE.GAMEOVER);
             }
-            ReduceTIme();
+            ReduceTime();
             if (battleTime <= 0f)
             {
-                TimeUp();
+               // TimeUp();
             }
 
         }
-        else if (currentState == (int)STATE.PAUSE)  //ポーズをかけてる時の処理
+        else if (currentState == (int)STATE.PAUSE)       //ポーズをかけてる時の処理
+        {   
+
+        }
+        else if (currentState == (int)STATE.BOSS)        //ボス戦での処理
+        {
+
+        }else if (currentState == (int)STATE.RESULT)    
         {
 
         }
-        else if (currentState == (int)STATE.RESULT)
-        {
-
-        }
-        else if (currentState == (int)STATE.GAMEOVER)
+        else if (currentState == (int)STATE.GAMEOVER)   //
         {
 
         }
@@ -147,40 +150,37 @@ public class StageManager : MonoBehaviour
     //プレイヤーの位置を設定する(仮)
     private IEnumerator SetPlayer()
     {
-        effectObj.SetActive(true);
+        effectObj.SetActive(true);                                          //VR酔い対策用のUIを表示する
         float pos = 0;
         while (pos < 12.5f)
         {
-
             pos += 0.125f;
-            menuObj.transform.position = new Vector3(0, -pos * 0.1f, 0);
-            Player.transform.position = new Vector3(0, pos, 0);
+            menuObj.transform.position = new Vector3(0, -pos * 0.1f, 0);    //ポッドを下降させる
+            Player.transform.position = new Vector3(0, pos, 0);             //プレイヤーを上昇させる
             yield return new WaitForSeconds(0.01f);
         }
-        GameManager.Instance.SetStage();
-        ChangeState((int)STATE.READY);
-        StartCoroutine(PlayReady());
-        menuObj.SetActive(false);
-        effectObj.SetActive(false);
+        GameManager.Instance.SetStage();    //ゲーム管理クラスをステージ状態にする                              
+        ChangeState((int)STATE.READY);      //ステージ管理クラスを準備状態にする
+        StartCoroutine(PlayReady());        //戦闘開始準備用のコルーチンを動作させる
+        menuObj.SetActive(false);           //格納用ポッドを非表示にする
+        effectObj.SetActive(false);         //VR酔い対策用のUIを非表示にする
     }
     //プレイヤーの位置を設定する(仮)
     private IEnumerator SetMenu()
     {
-        effectObj.SetActive(true);
-        menuObj.SetActive(true);
+        effectObj.SetActive(true);      //VR酔い対策用のUIを表示する
+        menuObj.SetActive(true);        //格納用ポッドを表示する
         float pos = 12.5f;
         while (pos > 1)
         {
-
             pos -= 0.125f;
-            menuObj.transform.position = new Vector3(0, -pos * 0.1f, 0);
-            Player.transform.position = new Vector3(0, pos, 0);
+            menuObj.transform.position = new Vector3(0, -pos * 0.1f, 0);    //ポッドを上昇させる
+            Player.transform.position = new Vector3(0, pos, 0);             //プレイヤーを下降させる
             yield return new WaitForSeconds(0.01f);
         }
-        Player.transform.position = new Vector3(0, 1, 0);
-
-        effectObj.SetActive(false);
-        SceneManager.UnloadSceneAsync(("Stage_1"));
+        Player.transform.position = new Vector3(0, 1, 0); //プレイヤーを初期位置に設定する
+        effectObj.SetActive(false);                       //VR酔い対策用のUIを非表示にする
+        SceneManager.UnloadSceneAsync(("Stage_1"));       //ステージ画面を非表示にする
     }
 
     //ランキング取得処理
@@ -212,8 +212,8 @@ public class StageManager : MonoBehaviour
 
     #endregion
 
-    #region
     //プレイ中の処理群
+    #region
     public void DamageStage()
     {
         selectStg.GetDamage();
@@ -251,12 +251,13 @@ public class StageManager : MonoBehaviour
         RetryBoard.SetActive(true);
     }
 
-
-    private void ReduceTIme()
+    //時間の
+    private void ReduceTime()
     {
         battleTime -= Time.deltaTime;
         TimeText.text = "残り" + battleTime.ToString("f0") + "秒";
     }
+
     //時間切れになった時の処理
     private void TimeUp()
     {
@@ -269,6 +270,7 @@ public class StageManager : MonoBehaviour
         DisapperStgCanvas();
     }
 
+    //ランキング名前入力用の処理
     private void InputName()
     {
 
@@ -279,6 +281,8 @@ public class StageManager : MonoBehaviour
             currentState = state;
      }
 
+
+    //リトライ用の処理
     public void RetryStage()
     {
         Init();
@@ -292,16 +296,18 @@ public class StageManager : MonoBehaviour
         
     }
 
+
+    //メニュー画面の遷移処理
     public void GoMenu()
     {
-        SoundManager.Instance.StopBGM();
-        SetScore(0);
-        ChangeState((int)STATE.NONE);
-        battleTime = 60f;
-        DisapperResultCanvas();
-        RetryBoard.SetActive(false);
-        StartCoroutine(SetMenu());
-        GameManager.Instance.SetMenu();
+        SoundManager.Instance.StopBGM();    //バトルBGMを停止
+        SetScore(0);                        //スコアを初期化
+        ChangeState((int)STATE.NONE);       //ステージの状態を初期化
+        battleTime = 60f;                   //戦闘時間の初期化
+        DisapperResultCanvas();             //リザルドのUIを非表示にする
+        RetryBoard.SetActive(false);        //リトライ用のUIを非表示にする
+        StartCoroutine(SetMenu());          //メニューの場所に移動するコルーチンを動かす
+        GameManager.Instance.SetMenu();     //ゲーム管理クラスの状態をメニューにする
         for (int i = 0; i < prefObjList.Count; i++)
         {
             prefObjList[i].SetActive(true);
@@ -315,6 +321,9 @@ public class StageManager : MonoBehaviour
 
     }
     #endregion
+
+    //ボス戦での処理群
+
 
     //シングルトン化
     protected static StageManager instance;

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.34965473, g: 0.44930166, b: 0.58773667, a: 1}
+  m_IndirectSpecularColor: {r: 0.10027607, g: 0.17007917, b: 0.30442023, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -913,7 +913,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 100
 --- !u!222 &239797861
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1002,6 +1002,49 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1193264214}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &263101677
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 263101679}
+  - component: {fileID: 263101678}
+  m_Layer: 0
+  m_Name: ObjectPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &263101678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263101677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b082a02cbac03846bd1107158e0f354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &263101679
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263101677}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.2837833, y: 100.21805, z: 28.82644}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &278437357
 GameObject:
   m_ObjectHideFlags: 0
@@ -1072,7 +1115,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: CHOPIN
 --- !u!222 &278437360
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1151,7 +1194,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: PINE
 --- !u!222 &332264509
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1230,7 +1273,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: SOLT
 --- !u!222 &340359462
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1662,7 +1705,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 1000
 --- !u!222 &369986198
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2372,7 +2415,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 700
 --- !u!222 &659864021
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2451,7 +2494,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 800
 --- !u!222 &661123847
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2734,7 +2777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enmM: {fileID: 1275376635}
-  enemy: {fileID: 8107116596221191856, guid: 50c0c4e8dfa9ea748b0fa348b630e71a, type: 3}
+  enemy: {fileID: 7856176418781509746, guid: 50c0c4e8dfa9ea748b0fa348b630e71a, type: 3}
   enmList: []
 --- !u!1 &701646589
 GameObject:
@@ -3124,7 +3167,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 200
 --- !u!222 &822575009
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3203,7 +3246,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: TAMTAM
 --- !u!222 &883427186
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3288,7 +3331,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 400
 --- !u!222 &904950755
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3482,7 +3525,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 600
 --- !u!222 &950157079
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3561,7 +3604,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 900
 --- !u!222 &1092305553
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3794,7 +3837,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: KARIN
 --- !u!222 &1186580578
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4021,7 +4064,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: TARO
 --- !u!222 &1203109853
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4137,7 +4180,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 500
 --- !u!222 &1246007565
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5067,7 +5110,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: CHERRY
 --- !u!222 &1568512272
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5236,7 +5279,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: ROSE
 --- !u!222 &1611375602
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5352,7 +5395,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: FIRE
 --- !u!222 &1621301803
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6066,7 +6109,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 300
 --- !u!222 &1925111993
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6145,7 +6188,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: SIGN
 --- !u!222 &1938714286
 CanvasRenderer:
   m_ObjectHideFlags: 0
